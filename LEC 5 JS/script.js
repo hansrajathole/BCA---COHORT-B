@@ -21,18 +21,18 @@ let arr = [10,20,30,40]
 
 // CallBack Function 
 
-function sum(a,b) {
+// function sum(a,b) {
    
-    return a+b
+//     return a+b
     
-}
+// }
 
-function fun(sum) {
-    let ans = sum(10 , 20)
-    console.log(ans);
+// function fun(sum) {
+//     let ans = sum(10 , 20)
+//     console.log(ans);
     
-    console.log("hello bhaiyo kaise ho");
+//     console.log("hello bhaiyo kaise ho");
 
-}
+// }
 
-fun(sum)
+// fun(sum)
