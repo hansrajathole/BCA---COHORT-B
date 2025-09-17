@@ -5,7 +5,7 @@ const userModel = require("../models/user.model")
 const router = express.Router()
 
 
-router.get("/register",(req ,res)=>{
+router.get("/register/:id",(req ,res)=>{
 
 })
 
