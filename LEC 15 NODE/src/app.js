@@ -1,17 +1,18 @@
 const express = require("express")
 const userRouter = require("../src/routes/user.router")
-
+const morgan = require("morgan")
 const app = express()
 
-app.use((req, res , next)=>{
 
-    console.log("app level");
+
+// app.use((req, res , next)=>{
+
+//     console.log("app level");
     
+//     next()
+// })
 
-
-    next()
-})
-
+app.use(morgan("dev"))
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
