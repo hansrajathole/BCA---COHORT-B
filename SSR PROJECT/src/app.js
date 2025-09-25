@@ -1,0 +1,29 @@
+const express = require("express")
+const userRouter = require("../src/routes/user.router")
+const authRouter = require("../src/routes/auth.router")
+const postRouter = require("../src/routes/post.router")
+
+const path = require("path")
+const config = require("./config/config")
+const app = express()
+require("dotenv").config()
+
+
+
+
+app.use(express.json())
+app.use(express.urlencoded({extended : true}))
+
+
+app.set("view engine", "ejs")
+app.set("views",path.join(__dirname, "views"))
+
+app.use(express.static(path.join(__dirname,"../public/css")))
+
+app.use("/", authRouter)
+app.use("/users",userRouter)
+app.use("/posts", postRouter)
+
+
+
+module.exports = app
