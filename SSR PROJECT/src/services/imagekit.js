@@ -1,13 +1,13 @@
-// SDK initialization
 
-const ImageKit = require("imagekit");
-const config = require("../config/config");
+var ImageKit = require("imagekit");
+const config = require("../config/config")
 
 var imagekit = new ImageKit({
-  publicKey: config.imageKit_public_key,
-  privateKey: config.imageKit_private_key,
-  urlEndpoint: "https://ik.imagekit.io/dt5roofaq",
+    publicKey : config.imageKit_public_key ,
+    privateKey : config.imageKit_private_key,
+    urlEndpoint : config.url_end_point
 });
+
 
 async function upload(profile) {
   

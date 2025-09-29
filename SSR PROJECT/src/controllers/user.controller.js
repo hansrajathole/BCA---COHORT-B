@@ -166,7 +166,7 @@ module.exports.postUpdateController = async (req , res) => {
         user.username = username || user.username
         
         if(profileUrl){
-            user.profile = profileUrl
+            user.profile = profileUrl 
         }
 
         await user.save()

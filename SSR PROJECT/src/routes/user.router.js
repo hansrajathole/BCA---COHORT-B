@@ -18,5 +18,5 @@ router.get("/profile/update/:userId", protected , userController.getUpdateContro
 router.post("/profile/update/:userId", protected , upload.single("profile") ,userController.postUpdateController)
 
 
-router.get("/login",)
+// router.get("/login",)
 module.exports = router
