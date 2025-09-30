@@ -25,12 +25,14 @@ module.exports.loginPostController = async function (req ,res) {
         if (!email) {
             return res.redirect("/users/login")
         }
+
         if (!password) {
             return res.redirect("/users/login")
         }
 
         const user = await userModel.findOne({email : email})
 
+        
         if(!user){
             return res.redirect("/users/register")
         }
@@ -41,15 +43,19 @@ module.exports.loginPostController = async function (req ,res) {
             return res.redirect("/users/login")
         }
 
+
         const token = await jwt.sign({
             id : user._id ,
             username : user.username ,
             email : user.email
         },config.JWT_SECRET)
+
+
         delete user._doc.password
 
         req.session.token = token
         req.session.user = user
+
         res.redirect("/")
 
     } catch (error) {

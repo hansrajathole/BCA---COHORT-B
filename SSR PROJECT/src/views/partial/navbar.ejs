@@ -7,13 +7,14 @@
        <% if(user){ %>
          <a href="/users/profile/<%= user._id %>">
             <img  src=<%= user.profile %> alt="profile">
-        </a>
+         </a>
         <% } %>
         <div class="login-btn">
-            <% if (!user) { %>
-                <a href="/users/login">login</a>
-           <% }else { %>
+            <% if (user) { %>
                 <a href="/users/logout">logout</a>
+                
+           <% }else { %>
+                <a href="/users/login">login</a>
             <% } %>
         </div>
     </div> 

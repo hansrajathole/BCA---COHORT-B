@@ -7,6 +7,7 @@ module.exports.indexController = async function (req, res) {
         const user = req.session.user || null
         const posts = await postModel.find().populate("author")
 
+       
         res.render("index.ejs", {title : "Home page" , user : user , posts })
     
         
