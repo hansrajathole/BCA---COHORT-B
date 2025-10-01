@@ -21,6 +21,8 @@ async function protected(req , res, next) {
 
         req.userId = decode.id
 
+       
+
         next()
 
     } catch (error) {
