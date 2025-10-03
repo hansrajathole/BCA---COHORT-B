@@ -48,14 +48,15 @@ module.exports.loginPostController = async function (req ,res) {
             id : user._id ,
             username : user.username ,
             email : user.email
-        },config.JWT_SECRET)
+        },cT_SECRET)
 
 
-        delete user._doc.password
-
+        
         req.session.token = token
         req.session.user = user
-
+        
+        delete user._doc.password
+        
         res.redirect("/")
 
     } catch (error) {
@@ -64,7 +65,7 @@ module.exports.loginPostController = async function (req ,res) {
        
     }
     
-}
+}onfig.JW
 
 
 module.exports.registerGetController = function(req, res) {
@@ -85,7 +86,7 @@ module.exports.registerPostController = async function(req, res) {
         const {username , email , password} = req.body
 
         const hashedPass = await bcrypt.hash(password, 10)
-
+        
         const user = await userModel.create({
             username : username,
             email : email,
