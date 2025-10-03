@@ -13,6 +13,7 @@ module.exports.getCreateController = (req, res)=>{
 }
 
 
+
 module.exports.postCreateController = async (req,res)=>{
     try {
         
@@ -23,6 +24,8 @@ module.exports.postCreateController = async (req,res)=>{
         }
 
         const userId = req.userId
+
+   
 
         const post = await postModel.create({
             author : userId,
@@ -95,3 +98,6 @@ module.exports.deletePostController = async (req ,res) => {
        
     }
 }
+
+
+
