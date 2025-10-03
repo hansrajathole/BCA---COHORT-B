@@ -48,7 +48,7 @@ module.exports.loginPostController = async function (req ,res) {
             id : user._id ,
             username : user.username ,
             email : user.email
-        },cT_SECRET)
+        },config.JWT_SECRET)
 
 
         
@@ -65,7 +65,7 @@ module.exports.loginPostController = async function (req ,res) {
        
     }
     
-}onfig.JW
+}
 
 
 module.exports.registerGetController = function(req, res) {
