@@ -55,7 +55,7 @@ module.exports.UpdateController = async (req ,res) => {
 
         const {title , description , image , price ,category} = req.body
 
-        const product = await postModel.findById(productId)
+        const product = await productModel.findById(productId)
 
         product.title = title || product.title
         product.description = description || product.description
